@@ -1,0 +1,16 @@
+<p>user: <%= @user.name %></p>
+<p>introduction: <%= @user.introduction %></p>
+<%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size:"40x40" %>
+<%= link_to "プロフィール編集", edit_user_path(@user) %>
+
+<h1>自分の投稿一覧</h1>
+<% @books.each do |book| %>
+
+<div>
+  <h2><%= link_to book.title, book_path(book.id) %></h2>
+  <p>投稿者：<%= book.user.name %></p>
+  <p>本文</p>
+  <p><%= book.body %></p>
+</div>
+
+<% end %>
