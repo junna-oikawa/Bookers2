@@ -2,7 +2,7 @@
 <% @books.each do |book| %>
 
 <div>
-  <h2><%= book.title %></h2>
+  <h2><%= link_to book.title, book_path(book.id) %></h2>
   <p>投稿者：<%= book.user.name %></p>
   <p>本文</p>
   <p><%= book.body %></p>
