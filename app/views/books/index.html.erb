@@ -1,0 +1,11 @@
+<h1>投稿一覧</h1>
+<% @books.each do |book| %>
+
+<div>
+  <h2><%= book.title %></h2>
+  <p>投稿者：<%= book.user.name %></p>
+  <p>本文</p>
+  <p><%= book.body %></p>
+</div>
+
+<% end %>
